@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/doar.css">
+</head>
+<body>
+
+<%- include('partials/topo') %>
+<%- include('partials/header') %>
+<%- include('partials/nav-categorias') %>
+
+<section class="doacao-container">
+    <div class="lado-esquerdo">
+        <video autoplay muted loop class="video">
+            <source src="/video/bannerofc.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="lado-direito">
+        <h2>Doe seu livro</h2>
+
+        <% if (sucesso) { %>
+            <p style="color:green; text-align:center;">Doação registrada com sucesso!</p>
+        <% } %>
+        <% if (erro) { %>
+            <p style="color:red; text-align:center;">Erro ao registrar doação. Tente novamente.</p>
+        <% } %>
+
+        <form action="/doar" method="POST">
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Seu email" required>
+
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+
+            <label>Nome do Livro</label>
+            <input type="text" name="livro" placeholder="Ex: Harry Potter" required>
+
+            <label>Quantidade</label>
+            <input type="number" name="quantidade" min="1" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<a href="https://wa.me/5599999999999" class="whatsapp" target="_blank">
+    <img src="/img/whatsapp.png" alt="WhatsApp">
+</a>
+
+</body>
+</html>

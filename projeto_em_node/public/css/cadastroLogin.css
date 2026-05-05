@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  max-width: 60%;
+}
+body {
+  background: #8472f4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #372791;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #370a4d;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #7c5cd4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6810b9;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+a {
+  color: #2c0546;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/*  RESPONSIVIDADE */
+
+/* 1. CORREÇÃO PARA CELULAR  */
+@media (max-width: 480px) {
+  .container {
+    width: 90% !important; /* Força o card a ocupar quase a tela toda lateralmente */
+    max-width: none; /* Remove a trava de 320px no celular */
+    padding: 25px 15px; /* Ajusta o espaço interno */
+  }
+
+  input,
+  select,
+  button {
+    font-size: 16px; /* Melhora a leitura no celular */
+    padding: 12px; /* Aumenta a área de toque */
+  }
+
+  .logo {
+    max-width: 80% !important; /* Deixa a logo maior no celular */
+  }
+}
+
+/* 2. PARA TV  */
+@media (min-width: 1500px) {
+  body {
+    overflow: hidden; /* Mata a barra de rolagem chata na apresentação */
+  }
+
+  .container {
+    width: 450px !important; /* Aumenta o card na TV para não parecer minúsculo */
+    padding: 50px; /* Dá mais respiro interno */
+    border-radius: 20px; /* Deixa as bordas mais bonitas em telas grandes */
+  }
+
+  h2 {
+    font-size: 32px; /* Título maior para quem olha de longe na TV */
+  }
+
+  input,
+  select,
+  button {
+    padding: 15px; /* Deixa os campos mais "robustos" */
+    font-size: 18px;
+  }
+
+  .logo {
+    max-width: 250px !important;
+  }
+}
+
+/* 3. AJUSTE PARA TELAS PEQUENAS DEITADAS (Landscape) */
+@media (max-height: 500px) {
+  body {
+    overflow-y: auto; /* Se a tela for muito baixa (TV deitada/celular), o scroll volta só pra não sumir o botão */
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+}
+/* --- ADIÇÃO PARA O CAMPO DE SENHA COM OLHO --- */
+
+/* Cria uma caixa para segurar o input e o ícone juntos */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+/* Garante que o input ocupe todo o espaço do wrapper */
+.input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+/* O ícone fica posicionado "flutuando" na direita */
+.olho-senha {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  color: #888;
+  z-index: 10; /* Garante que o ícone fique "por cima" para ser clicável */
+  font-size: 18px;
+  user-select: none; /* Impede que o usuário selecione o ícone como texto */
+}
+
+.olho-senha:hover {
+  color: #370a4d;
+}
+
+
+

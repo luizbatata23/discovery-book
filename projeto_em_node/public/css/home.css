@@ -1,0 +1,870 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+#wave {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove o espaço de respiro da imagem */
+    margin-top: -1px; /* Sobrepõe levemente para selar a brecha */
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* aqui fica o topo, onde esta o começo com a frase*/
+.topo {
+    background: #8472f4;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 15px;
+}
+
+.icon-book {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* aqui é o header onde fica a logo e alguns links*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #f8f2d8;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-height: 90px; 
+}
+
+.logo-img {
+    width: 270px;     
+    height: auto;  
+    object-fit: contain;
+}
+
+
+.logo-img {
+    width: 270px;
+    height: auto;
+}
+
+
+/* MENU principal da aba de cima */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: 0.2s;
+    padding-bottom: 3px; 
+}
+
+.menu li a:hover {
+    color: #150122;
+    border-bottom: 2px solid #290341;
+}
+
+/* esse é o cadastro */
+.btn-login a {
+    background:#8472f4;
+    color: white;
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.btn-login a:hover {
+    background:#5f47ff;
+}
+ 
+/* 🔍 BARRA DE PESQUISA */
+.search-box input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 220px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #8472f4;
+}
+
+.search-container {
+    position: relative; /* MUITO IMPORTANTE */
+}
+
+.resultados {
+    position: absolute;
+    top: 110%; /* joga pra baixo certinho */
+    left: 0;
+    width: 100%;
+    max-width: 350px;
+
+    background: #f5f5f5;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    padding: 15px;
+    display: none;
+    z-index: 999;
+}
+
+.resultado-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.resultado-item img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.resultado-item:hover {
+    background: #f5f5f5;
+}
+
+.resultado-item h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.resultado-item p {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+
+.limpar {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #777;
+    cursor: pointer;
+}
+
+.limpar:hover {
+    color: #000;
+}
+
+.ver-mais {
+    margin-top: 10px;
+    background: #777;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+/* ===== MENU PROFISSIONAL ===== */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 600px;
+    background: white;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* MOSTRAR AO PASSAR O MOUSE */
+.dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* COLUNAS */
+.coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna h4 {
+    margin-bottom: 10px;
+    color: #8472f4;
+}
+
+.coluna a {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.coluna a:hover {
+    color: #8472f4;
+}
+
+/* ===== BARRA DE PESQUISA PROFISSIONAL ===== */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    width: 220px;
+    border-radius: 30px;
+}
+
+.search-container button {
+    border: none;
+    background: transparent; /* tira o fundo roxo */
+    padding: 8px;
+    cursor: pointer;
+}
+
+.search-container i {
+    font-size: 18px;
+    color: #555;
+}
+
+.search-container button:hover i {
+    color: #8472f4;
+}  
+.barra-categorias {
+    width: 100%;
+    background: white;
+    padding: 12px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Centralizar e alinhar */
+.barra-categorias .nav-menu ul {
+    justify-content: flex-start;
+}
+
+/* Ajuste do dropdown nessa nova barra */
+.barra-categorias .dropdown {
+    position: relative;
+}
+
+/* Ajustar posição do mega menu */
+.barra-categorias .mega-menu {
+    top: 45px;
+    left: 0;
+}
+/* MENU ESCONDIDO */
+.menu-categorias {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+/* LINKS */
+.menu-categorias a {
+    display: block;
+    margin: 8px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.menu-categorias a:hover {
+    color: #8e44ad;
+}
+
+/* QUANDO ABRIR */
+.menu-categorias.ativo {
+    display: block;
+}
+/* SEÇÃO CATEGORIAS onde fica a parte de infatil e tals */
+.categorias {
+    background: #f8f2d8;
+    border-bottom: 1px solid #eee;
+    padding: 12px 40px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.categorias ul {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+.categorias li a {
+    color: #555;
+    font-size: 16px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.categorias li a:hover {
+   color: #150122;
+    border-bottom: 2px solid #290341;
+}
+
+
+.cat-direita li a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 15px;
+    transition: 0.2s;
+    padding-bottom: 3px; 
+}
+
+.cat-direita li a:hover {
+    color: #150122;
+    border-bottom: 2px solid #290341;
+}
+
+
+/* aqui é o banner */
+.banner {
+    position: relative;
+    padding: 60px 50px;
+    /*background-color: #A683B6;*/
+    background-color:#8472F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner-esquerda {
+    width: 40%;
+    text-align: center;
+    position: relative; 
+}
+
+.imagem-banner {
+  
+    max-width: 600px;
+    margin-bottom: 15px;
+} 
+
+
+
+/* BOTÃO DE CADASTRO */
+.segundo-cadastro{
+    position: absolute;
+    top: 100%;       
+    left: 50%;       
+    transform: translate(-30%, 10px); 
+    padding: 20px 40px; 
+    font-size: 20px;
+    font-weight: 600;
+    background: #e9c10f;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+    border-radius: 25px;
+}
+
+.segundo-cadastro:hover {
+    background: #c78b0a;
+}
+
+
+
+.banner-direita {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.banner-video {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    /*border-radius: 23px; 
+    border: solid 7PX #ffc126; */
+   
+}
+
+
+/* site para onda: https://www.softr.io/tools/svg-wave-generator ou https://app.haikei.app/ 
+
+.onda {
+    position:absolute;
+    bottom: -70px;
+    left: 0;
+    height: 270px;
+    width: 100%;
+    pointer-events: none;
+}
+*/
+
+/*  SEÇÃO ASSINATURA, onde fica alguns introducoes  */
+.assinatura-section {
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 100px;
+   /* background-color:  #f8f2d8; */
+    margin: 0;
+}
+
+.titulo-assinatura-box {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto 25px auto;
+
+}
+
+/*
+.titulo-assinatura {
+    font-size: 32px;
+    font-weight: 900;
+    color: #450070;
+    line-height: 32px;
+    margin-top: 40px;
+} */
+
+.sub-assinatura  {
+    color: #4b1c79;
+    font-size: 35px;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: bold;
+    margin-top: -5px;  
+    text-align: center;
+    margin-bottom: 50px; 
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.sub-assinatura.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.assinatura-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 35px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.assinatura-card {
+    width: 40%;
+    background: none;
+    text-align: left;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.assinatura-card:hover {
+    transform: translateY(-10px);
+}
+
+.assinatura-card img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+
+.cor1 { color: #a600d8; }
+.cor2 { color: #0083b8; }
+.cor3 { color: #67a600; }
+
+.assinatura-card p {
+    font-size: 15px;
+    color: #555;
+    line-height: 20px;
+    max-width: 280px;
+}
+
+/*LIVROS mais famosos */
+.livros-section {
+    padding: 50px 0;
+    background: #ece5ec;
+   
+}
+
+.titulo-livros {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4b1c79;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.livros-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.livro-card {
+    width: 240px;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: .3s; 
+}
+
+.livro-card:hover {
+    transform: translateY(-6px);
+}
+
+.livro-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.sinopse {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    height: 40px;
+    overflow: hidden;
+}
+
+/*roda pé*/
+footer {
+    width: 100%;
+    margin-top: 60px;
+    margin: 0;
+}
+
+/*PARTE ROXA */
+.footer-top {
+    background: #8472f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+}
+
+/* COLUNA DE LINKS */
+.footer-links ul {
+    list-style: none;      
+    padding: 0;          
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+
+/* REDES SOCIAIS */
+.footer-social h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.icons-redes img {
+    width: 28px;
+    margin-right: 8px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.footer-social h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    
+}
+
+
+/* pequenas imagens*/
+.footer-imgs img {
+    width: 210px;
+    margin-left: 10px;
+    
+}
+
+/* PARTE AZUL */
+.footer-bottom {
+    background: #00aac8;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-bottom-item img {
+    width: 26px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    font-size: 26px;
+    padding: 14px 16px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+.whatsapp img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* 
+   CONFIGURAÇÕES GERAIS DE RESPONSIVIDADE
+    */
+
+/* TABLET (Até 1024px) */
+@media (max-width: 1024px) {
+    .banner-video, .topo {
+        display: none; /* Remove o topo roxo e o vídeo conforme pedido */
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .banner-esquerda {
+        width: 100%;
+    }
+
+    .assinatura-container {
+        flex-direction: row; /* Mantém lado a lado no tablet */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .assinatura-card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+/* CELULAR (Até 768px) */
+@media (max-width: 768px) {
+    
+    /* Header e Logo Centralizada */
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-img {
+        width: 320px; /* Logo maior no celular */
+        margin: 0 auto;
+    }
+
+    .menu {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* MENU DE CATEGORIAS (Transformação em Barrinhas) */
+    /* Nota: Para as barrinhas funcionarem 100%, você precisará de um pequeno script JS 
+       ou usar a técnica de checkbox. Aqui vou preparar o layout para empilhar. */
+    .categorias {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .categorias ul {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Esconde por padrão para o efeito de menu */
+    }
+
+    /* Adicione uma classe 'active' via JS para mostrar o menu */
+    .categorias.active ul {
+        display: flex;
+    }
+
+    /* Criando visualmente as 3 barras via CSS (Exemplo simplificado) */
+    .categorias::before {
+        content: "☰ Categorias";
+        font-weight: bold;
+        cursor: pointer;
+        padding: 10px;
+        color: #4b1c79;
+    }
+
+    /* Banner e Botão Centralizado */
+    .imagem-banner {
+        max-width: 90%;
+    }
+
+    .segundo-cadastro {
+        position: relative;
+        transform: none;
+        left: 0;
+        margin-top: 20px;
+    }
+
+    /* Seção "Como Doar" e "Livros" - Um embaixo do outro */
+    .assinatura-container, .livros-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .assinatura-card, .livro-card {
+        width: 90%;
+        text-align: center;
+    }
+
+    .assinatura-card p {
+        max-width: 100%;
+    }
+
+    /* Footer Bonitinho e Centralizado */
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-imgs {
+        margin: 0;
+    }
+
+    .footer-imgs img {
+        margin: 0;
+    }
+}
+
+/* COMPUTADORES GRANDES E TV (Acima de 1400px) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .logo-img {
+        width: 350px;
+    }
+
+    .banner-video {
+        max-width: 800px;
+        height: 500px;
+    }
+}
+
+/* TVS 4K */
+@media (min-width: 2500px) {
+    html {
+        font-size: 24px; /* Aumenta a base do texto para telas gigantes */
+    }
+
+    .logo-img {
+        width: 500px;
+    }
+}

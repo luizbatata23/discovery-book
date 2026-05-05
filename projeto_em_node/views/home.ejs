@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoverBook</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <script src="/js/home.js" defer></script>
+</head>
+<body>
+
+<%- include('partials/topo') %>
+<%- include('partials/header') %>
+<%- include('partials/nav-categorias') %>
+
+<section class="banner">
+    <div class="banner-esquerda">
+        <img src="/img/banner.png" alt="banner" class="imagem-banner">
+        <a href="/cadastro" class="segundo-cadastro">Cadastre-se</a>
+    </div>
+    <div class="banner-direita">
+        <video autoplay muted loop class="banner-video">
+            <source src="/video/bannerofc.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<section class="assinatura-section">
+    <div class="assinatura-container">
+        <div class="assinatura-card">
+            <img src="/img/como doar.jpg" alt="como doar">
+            <h3 class="cor1">Como doar</h3>
+            <p>Você entra em contato conosco. Agendamos e retiramos os materiais em seu endereço.</p>
+        </div>
+        <div class="assinatura-card">
+            <img src="/img/separacao.jpg" alt="como classificamos">
+            <h3 class="cor2">Como Classificamos</h3>
+            <p>Após a retirada fazemos a seleção e separamos os livros de acordo com seu estado de conservação.</p>
+        </div>
+        <div class="assinatura-card">
+            <img src="/img/destino.jpg" alt="qual o destino">
+            <h3 class="cor3">Qual Destino</h3>
+            <p>Enviamos para o reúso, instituições, ONGs e montamos bibliotecas comunitárias.</p>
+        </div>
+    </div>
+</section>
+
+<section class="livros-section">
+    <h2 class="titulo-livros">Livros disponíveis</h2>
+    <div class="livros-container">
+        <div class="livro-card">
+            <img class="livro-img" src="/img/livrofa.jpg" alt="Capa do livro">
+            <h3>O Pequeno Príncipe</h3>
+            <p class="sinopse">Historia de um garoto que viaja</p>
+        </div>
+        <div class="livro-card">
+            <img class="livro-img" src="/img/livro2fa.jpg" alt="Capa do livro">
+            <h3>Turma da Mônica</h3>
+            <p class="sinopse">Lenda para crianças</p>
+        </div>
+        <div class="livro-card">
+            <img class="livro-img" src="/img/livro3fa.jpg" alt="Capa do livro">
+            <h3>O Mágico de Oz</h3>
+            <p class="sinopse">Personagens que vão se conhecendo</p>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<a href="https://wa.me/5599999999999" class="whatsapp" target="_blank">
+    <img src="/img/whatsapp.png" alt="WhatsApp">
+</a>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+<%- include('partials/topo') %>
+<%- include('partials/header') %>
+
+<main style="padding: 2rem; text-align: center;">
+    <h2>Bem-vindo, <%= nome %>! 🎉</h2>
+    <p>Você está logado no DiscoverBook.</p>
+    <a href="/logout">Sair</a>
+</main>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

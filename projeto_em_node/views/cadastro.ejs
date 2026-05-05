@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/cadastroLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="/img/logocel.png" alt="Logo do site" class="logo">
+    <h2>Cadastro</h2>
+
+    <% if (erro === 'email_existe') { %>
+        <p style="color:red; text-align:center; font-weight:bold;">
+            Este e-mail já está cadastrado! Tente fazer login.
+        </p>
+    <% } else if (erro === 'sistema') { %>
+        <p style="color:red; text-align:center; font-weight:bold;">
+            Erro no sistema. Tente novamente mais tarde.
+        </p>
+    <% } %>
+
+    <form action="/cadastro" method="POST">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <div class="input-wrapper">
+            <input type="password" name="senha" placeholder="Senha" required>
+            <i class="fa-solid fa-eye olho-senha"></i>
+        </div>
+        <select name="tipo" required>
+            <option value="">Tipo de cadastro</option>
+            <option value="escola">Escola</option>
+            <option value="doador">Doador</option>
+        </select>
+        <button type="submit">Criar conta</button>
+    </form>
+
+    <p>Já possui cadastro? <a href="/login">Entrar</a></p>
+</div>
+
+<script src="/js/cadastroLogin.js"></script>
+</body>
+</html>

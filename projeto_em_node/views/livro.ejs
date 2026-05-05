@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Livro | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/livro.css">
+</head>
+<body>
+
+<%- include('partials/topo') %>
+<%- include('partials/header') %>
+
+<div class="categorias">
+    <ul>
+        <li><a href="/infantil">Infantil</a></li>
+        <li><a href="/pequeno">1 a 3 anos</a></li>
+        <li><a href="/tres_cinco">3 a 5 anos</a></li>
+        <li><a href="/seis_dez">6 a 10 anos</a></li>
+        <li><a href="/onze_mais">11 a 14 anos</a></li>
+        <li><a href="/e_medio">Ensino médio</a></li>
+    </ul>
+</div>
+
+<div class="container">
+
+    <button class="voltar" onclick="history.back()">⬅ Voltar</button>
+
+    <div class="livro-info">
+        <img id="capaLivro" class="capa" src="" alt="Capa do livro">
+        <div class="dados">
+            <h1 id="tituloLivro"></h1>
+            <p class="sinopse" id="sinopseLivro"></p>
+            <div class="estrelas" id="avaliacaoLivro">★★★★★</div>
+        </div>
+    </div>
+
+    <h2>Comentários dos leitores</h2>
+
+    <div id="listaComentarios"></div>
+
+    <textarea id="inputComentario" placeholder="Escreva seu comentário..."></textarea>
+    <button onclick="enviarComentario()">Enviar</button>
+
+</div>
+
+<script src="/js/livro.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infantil | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/infantil.css">
+</head>
+<body>
+
+<%- include('partials/topo') %>
+<%- include('partials/header') %>
+<%- include('partials/nav-categorias') %>
+
+<div class="categorias">
+    <ul>
+        <li><a href="/pequeno">1 a 3 anos</a></li>
+        <li><a href="#">Didáticos</a></li>
+        <li><a href="#">Ficção</a></li>
+        <li><a href="#">HQ e Mangás</a></li>
+        <li><a href="#">Clássicos</a></li>
+    </ul>
+</div>
+
+<div class="categoria-banner">
+    <h1>Livros para crianças de 3 a 5 anos</h1>
+</div>
+
+<section class="livros-lista">
+
+    <div class="livro-card" onclick="abrirLivroDetalhes('galinha-vermelha')">
+        <img src="/img/ex de logo.png" alt="A Galinha Vermelha">
+        <h3>A Galinha Vermelha</h3>
+        <p class="quantidade">Unidades: 4</p>
+    </div>
+
+    <div class="livro-card" onclick="abrirLivroDetalhes('animais')">
+        <img src="/img/ex de logo.png" alt="Explorando os Animais">
+        <h3>Explorando os Animais</h3>
+        <p class="quantidade">Unidades: 7</p>
+    </div>
+
+    <div class="livro-card" onclick="abrirLivroDetalhes('capuz-vermelho')">
+        <img src="/img/ex de logo.png" alt="O Capuz Vermelho">
+        <h3>O Capuz Vermelho</h3>
+        <p class="quantidade">Unidades: 2</p>
+    </div>
+
+    <div class="livro-card" onclick="abrirLivroDetalhes('incriveis')">
+        <img src="/img/ex de logo.png" alt="Os Incríveis">
+        <h3>Os Incríveis</h3>
+        <p class="quantidade">Unidades: 10</p>
+    </div>
+
+</section>
+
+<%- include('partials/footer') %>
+
+<script>
+    function abrirLivroDetalhes(id) {
+        window.location.href = "/livro?livro=" + id;
+    }
+</script>
+
+</body>
+</html>

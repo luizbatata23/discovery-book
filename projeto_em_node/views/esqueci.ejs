@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Senha | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/cadastroLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="/img/logocel.png" alt="Logo" class="logo">
+    <h2>Recuperar Senha</h2>
+
+    <% if (erro === 'senha_igual') { %>
+        <p style="color:orange; text-align:center;">A nova senha não pode ser igual à atual!</p>
+    <% } else if (erro === 'dados_invalidos') { %>
+        <p style="color:red; text-align:center;">Nome ou E-mail incorretos.</p>
+    <% } else if (erro === 'sistema') { %>
+        <p style="color:red; text-align:center;">Erro no sistema. Tente novamente.</p>
+    <% } %>
+
+    <form action="/redefinir" method="POST">
+        <input type="email" name="email" placeholder="Seu E-mail cadastrado" required>
+        <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+        <div class="input-wrapper">
+            <input type="password" name="nova_senha" placeholder="Nova Senha" required>
+            <i class="fa-solid fa-eye olho-senha"></i>
+        </div>
+        <button type="submit">Redefinir Senha</button>
+    </form>
+
+    <p><a href="/login">Voltar para o Login</a></p>
+</div>
+
+<script src="/js/cadastroLogin.js"></script>
+</body>
+</html>

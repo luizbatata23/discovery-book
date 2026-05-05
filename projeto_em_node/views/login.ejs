@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | DiscoverBook</title>
+    <link rel="stylesheet" href="/css/cadastroLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="/img/logocel.png" alt="Logo do site" class="logo">
+    <h2>Login</h2>
+
+    <% if (erro) { %>
+        <p style="color:red; text-align:center;">E-mail ou senha incorretos!</p>
+    <% } %>
+    <% if (sucesso) { %>
+        <p style="color:green; text-align:center;">Cadastro realizado com sucesso! Faça login.</p>
+    <% } %>
+    <% if (sucesso_redefinir) { %>
+        <p style="color:green; text-align:center;">Senha alterada com sucesso!</p>
+    <% } %>
+
+    <form action="/login" method="POST">
+        <input type="email" name="email_id" placeholder="E-mail" required>
+        <div class="input-wrapper">
+            <input type="password" name="senha" placeholder="Senha" required>
+            <i class="fa-solid fa-eye olho-senha"></i>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p>Não possui cadastro? <a href="/cadastro">Cadastre-se</a></p>
+    <p><a href="/esqueci">Esqueci minha senha</a></p>
+</div>
+
+<script src="/js/cadastroLogin.js"></script>
+</body>
+</html>
