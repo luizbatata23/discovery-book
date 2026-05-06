@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
       req.session.email = usuario.email;
       req.session.usuario_id = usuario.id;
       req.session.usuario_nome = usuario.nome;
-      res.redirect('/painel');
+      res.redirect('/home');
     } else {
       res.redirect('/login?erro=1');
     }
@@ -87,9 +87,9 @@ router.post('/redefinir', async (req, res) => {
   });
 });
 
-// Painel
-router.get('/painel', autenticado, (req, res) => {
-  res.render('painel', { nome: req.session.usuario_nome });
+// home
+router.get('/home', autenticado, (req, res) => {
+  res.render('home', { nome: req.session.usuario_nome });
 });
 
 // Logout
